@@ -37,10 +37,11 @@ exit_button = button.Button(WIDTH // 2.37, HEIGHT // 4 + 150, exit_button, exit_
 
 while running:
 
+   # ==================== MENU ====================
+   
    # Inicia o vídeo
    video, frame = captura_do_video.read()
     
-   
    if not video:
       captura_do_video.set(cv2.CAP_PROP_POS_FRAMES, 0)  # Reinicia o vídeo se acabar
       continue
@@ -66,6 +67,8 @@ while running:
    options_button.draw()
    about_button.draw()
    exit_button.draw()
+   
+   # ==================== FIM MENU ====================
 
    # Eventos
    for event in pygame.event.get():
