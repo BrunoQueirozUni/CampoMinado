@@ -92,26 +92,29 @@ while running:
       back_button.draw()
       
       # ===================== SOBRE ====================
-      text = font.render("Sobre o jogo", True, (255, 255, 255))
-      text_1 = font.render("1 - Clique em um quadrado para revelar o número de minas ao redor.", True, (255, 255, 255))
-      text_2 = font.render("2 - Evite clicar em quadrados com minas.", True, (255, 255, 255))
-      text_3 = font.render("3 - Use os números para deduzir onde estão as minas.", True, (255, 255, 255))
-      text_4 = font.render("4 - Revele todos os quadrados sem minas para vencer.", True, (255, 255, 255))
-      screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2 - 200))
-      screen.blit(text_1, (width // 2 - text_1.get_width() // 2, height // 2 - text_1.get_height() // 2 - 150))
-      screen.blit(text_2, (width // 2 - text_2.get_width() // 2, height // 2 - text_2.get_height() // 2 - 100))
-      screen.blit(text_3, (width // 2 - text_3.get_width() // 2, height // 2 - text_3.get_height() // 2 - 50))
-      screen.blit(text_4, (width // 2 - text_4.get_width() // 2, height // 2 - text_4.get_height() // 2))
+      sobre = [
+         ("Sobre o jogo", 200),
+         ("1 - Clique em um quadrado para revelar o número de minas ao redor.", 150),
+         ("2 - Evite clicar em quadrados com minas.", 100),
+         ("3 - Use os números para deduzir onde estão as minas.", 50),
+         ("4 - Revele todos os quadrados sem minas para vencer.", 0)
+      ]
       
+      for texto, posicao in sobre:
+         texto_sobre = font.render(texto, True, (255, 255, 255))
+         screen.blit(texto_sobre, (width // 2 - texto_sobre.get_width() // 2, height // 2 - texto_sobre.get_height() // 2 - posicao))
+         
       # ===================== CRÉDITOS ====================
-      text_creditos = font.render("Feito Por: ", True, (255, 255, 255))
-      text_Angelo = font.render("- Angelo Miguel Requenha", True, (255, 255, 255))
-      text_Dinae = font.render("- Dinaê Pfiffer", True, (255, 255, 255))
-      text_Bruno = font.render("- Bruno de Queiróz", True, (255, 255, 255))
-      screen.blit(text_creditos, (width // 2 - text_creditos.get_width() // 2, height // 2 - text_creditos.get_height() // 2 + 60))
-      screen.blit(text_Angelo, (width // 2 - text_Angelo.get_width() // 2, height // 2 - text_Angelo.get_height() // 2 + 100))
-      screen.blit(text_Dinae, (width // 2 - text_Dinae.get_width() // 2, height // 2 - text_Dinae.get_height() // 2 + 140))
-      screen.blit(text_Bruno, (width // 2 - text_Bruno.get_width() // 2, height // 2 - text_Bruno.get_height() // 2 + 180))
+      creditos = [
+         ("Feito Por: ", 60),
+         ("- Angelo Miguel Requenha", 100),
+         ("- Dinaê Pfiffer", 140),
+         ("- Bruno de Queiróz", 180)
+      ]
+      
+      for texto, posicao in creditos:
+         texto_equipe = font.render(texto, True, (255, 255, 255))
+         screen.blit(texto_equipe, (width // 2 - texto_equipe.get_width() // 2, height // 2 - texto_equipe.get_height() // 2 + posicao))
       
    pygame.display.update() # Atualiza o jogo, sem isso, o jogo não roda...
    clock.tick(30) # FPS do jogo
