@@ -16,7 +16,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 roblox = pygame.image.load("images/image0.png").convert_alpha() #Converte a imagem para "png"
 
 # Posição das Imagens
-robloxImageX = 0;
+robloxImageX = 0
 
 while running:
    

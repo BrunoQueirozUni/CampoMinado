@@ -75,9 +75,10 @@ while running:
       if event.type == pygame.QUIT:
          running = False
          
+
    pygame.display.update() # Atualiza o jogo, sem isso, o jogo não roda...
    
    clock.tick(30) # FPS do jogo
 
-captura_do_video.release()
+# captura_do_video.release()
 pygame.quit()
